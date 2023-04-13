@@ -1,7 +1,7 @@
 # simple_poc_auto_scanner
-A simple python script: automatically import poc scripts for batch scanning of vulnerable hosts
-All you have to do is add your poc script to the plugins folder
-Your poc script should contain the following key functions, the sample format is as follows, to be called by the main scanning script:
+A simple python script: automatically import poc scripts for batch scanning of vulnerable hosts  
+All you have to do is add your poc script to the plugins folder  
+Your poc script should contain the following key functions, the sample format is as follows, to be called by the main scanning script:  
 ```
 def check_vuln(ip,port):
 	http_proto = http_proto_judge(ip,port)#获取协议头
