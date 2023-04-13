@@ -18,3 +18,12 @@ def check_vuln(ip,port):
 		#print(msg)
 		return False
 ```
+
+Add the targets you need to detect to targets.txt:
+```
+ip1:port1
+ip2:port2
+......
+```
+
+Run `python poc.py`,You can view the output vulnerable host information in the res.txt file
