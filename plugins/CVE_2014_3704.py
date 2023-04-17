@@ -42,7 +42,7 @@ def check_vuln(ip,port):
 			#print ("No vuln")
 			return False
 	except Exception as msg:
-		print(msg)
+		#print(msg)
 		return False
 
 
